@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="436.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wadaaaa.matri.matrix.HelloController">
+   <children>
+      <TextField id="lup" fx:id="lup" layoutX="364.0" layoutY="143.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField id="up" fx:id="up" layoutX="409.0" layoutY="143.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField id="rup" fx:id="rup" layoutX="454.0" layoutY="143.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField id="lmid" fx:id="lmid" layoutX="364.0" layoutY="177.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField id="mid" fx:id="mid" layoutX="409.0" layoutY="177.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField id="rmid" fx:id="rmid" layoutX="454.0" layoutY="177.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField id="ldown" fx:id="ldown" layoutX="364.0" layoutY="211.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField id="down" fx:id="down" layoutX="409.0" layoutY="211.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField id="rdown" fx:id="rdown" layoutX="454.0" layoutY="211.0" prefHeight="26.0" prefWidth="30.0" />
+      <Button fx:id="updateBtn" layoutX="394.0" layoutY="258.0" mnemonicParsing="false" onAction="#onUpdateBtnClick" text="Button" />
+      <ImageView fx:id="modifiedImage" fitHeight="361.0" fitWidth="288.0" layoutX="23.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+      <CheckBox id="normalized" fx:id="normalized" layoutX="379.0" layoutY="109.0" mnemonicParsing="false" onAction="#normalizedChange" text="Normalized" />
+   </children>
+</AnchorPane>
