@@ -5,6 +5,11 @@ import java.awt.Color;
 public class Kernel {
     private float[] kernel;
     private float[] origKernel;
+
+    public int getSize() {
+        return size;
+    }
+
     private int size;
     public float normal;
     public boolean normalized;
@@ -89,6 +94,11 @@ public class Kernel {
         }
     }
     public static Kernel Edge = new Kernel(new float[]{1,1,1,1,1,1,1,1,1});
+    public static Kernel Edge2 = new Kernel(new float[]{4,3,2,1,0,
+                                                        3,2,1,0,-1,
+                                                        2,1,0,-1,-2,
+                                                        1,0,-1,-2,-3,
+                                                        0,-1,-2,-3,-4});
 
 }
 
