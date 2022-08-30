@@ -36,7 +36,7 @@ public class ImageModifier{
         kernelized.clear();
         for (int y = 0; y < img.getHeight(); y++) {
             for (int x = 0; x < img.getWidth(); x++) {
-                var subbed = subber.getSub(x,y);
+                var subbed = subber.getSub(x,y, kernel.getSize());
                 modifiedImage.setRGB(x,y, kernel.kernelify(subbed).getRGB());
                 kernelized.add(kernel.kernelify(subbed));
 
