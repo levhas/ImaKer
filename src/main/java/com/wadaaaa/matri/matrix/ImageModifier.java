@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.WritableImage;
 
-public class ImageModifier implements Runnable{
+public class ImageModifier{
     private BufferedImage img;
 
     public void setImage(BufferedImage img) {
@@ -55,8 +55,5 @@ public class ImageModifier implements Runnable{
         return SwingFXUtils.toFXImage(imageProcessed, null);
     }
 
-    @Override
-    public void run() {
-        modify();
-    }
+
 }

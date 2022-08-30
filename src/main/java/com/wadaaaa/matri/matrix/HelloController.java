@@ -59,9 +59,6 @@ public class HelloController implements Initializable{
         var values = getCurrentValues();
         imageModifier.getKernel().setValues(values);
         imageModifier.modify();
-        var img = imageModifier.getModifierImage();
-
-
         modifiedImage.setImage(imageModifier.getModifierImage());
 
     }

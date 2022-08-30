@@ -1,6 +1,9 @@
 package com.wadaaaa.matri.matrix;
 
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class SubImager {
     BufferedImage img;
@@ -14,21 +17,25 @@ public class SubImager {
     private int ldown, down, rdown;
 
 
-    public int[] getSub(int x, int y){
-        lup = (x == 0 || y == 0) ? img.getRGB( x, y): img.getRGB(x - 1, y - 1);
-        up = y == 0 ? img.getRGB(x, y) : img.getRGB(x, y - 1);
-        rup = y == 0 || x == img.getWidth() - 1 ? img.getRGB(x, y) : img.getRGB(x + 1, y - 1);
+    public int[] getSub(int x, int y, int size){
 
-        lmid = x == 0 ? img.getRGB(x, y)  : img.getRGB(x - 1, y);
-        mid = img.getRGB(x, y);
-        rmid = x == img.getWidth() -1 ? img.getRGB(x, y) : img.getRGB(x + 1, y);
+        List<Integer> colors = new ArrayList<>();
+        for(int iy = y-(size/2); iy <= (y + (size/2)); iy++){
+            for(int ix = x-(size/2); ix <= (x + (size/2)); ix++){
+                var cx = Math.min(Math.max(0,ix), img.getWidth() - 1);
+                var cy = Math.min(Math.max(0,iy), img.getHeight() - 1);
+                try {
+                    colors.add(img.getRGB(cx, cy));
+                }
+                catch (ArrayIndexOutOfBoundsException e){
+                    System.out.println(cx + " " + cy);
+                }
+            }
+        }
+        int[] returnArr = colors.stream().mapToInt(i->i).toArray();
+        return returnArr;
 
-        ldown = y == img.getHeight() - 1 || x == 0  ? img.getRGB(x, y) : img.getRGB(x - 1, y + 1);
-        down = y == img.getHeight() -1 ? img.getRGB(x, y) : img.getRGB(x, y + 1);
-        rdown = y == img.getHeight() - 1 || x == img.getWidth() - 1 ? img.getRGB(x, y) : img.getRGB(x + 1, y + 1);
-        return new int[]{lup,up,rup,
-                        lmid,mid,rmid,
-                        ldown,down,rdown};
+
 
     }
 
