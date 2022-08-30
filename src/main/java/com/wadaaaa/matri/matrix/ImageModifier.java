@@ -38,7 +38,7 @@ public class ImageModifier implements Runnable{
             for (int x = 0; x < img.getWidth(); x++) {
                 var subbed = subber.getSub(x,y);
                 modifiedImage.setRGB(x,y, kernel.kernelify(subbed).getRGB());
-                //kernelized.add(kernel.kernelify(subbed));
+                kernelized.add(kernel.kernelify(subbed));
 
             }
         }

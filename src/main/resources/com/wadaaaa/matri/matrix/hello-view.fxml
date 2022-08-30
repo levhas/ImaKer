@@ -17,7 +17,7 @@
       <TextField id="ldown" fx:id="ldown" layoutX="364.0" layoutY="211.0" prefHeight="26.0" prefWidth="30.0" />
       <TextField id="down" fx:id="down" layoutX="409.0" layoutY="211.0" prefHeight="26.0" prefWidth="30.0" />
       <TextField id="rdown" fx:id="rdown" layoutX="454.0" layoutY="211.0" prefHeight="26.0" prefWidth="30.0" />
-      <Button fx:id="updateBtn" layoutX="394.0" layoutY="258.0" mnemonicParsing="false" onAction="#onUpdateBtnClick" text="Button" />
+      <Button fx:id="updateBtn" layoutX="394.0" layoutY="258.0" mnemonicParsing="false" onAction="#onUpdateBtnClick" text="Apply" />
       <ImageView fx:id="modifiedImage" fitHeight="361.0" fitWidth="288.0" layoutX="23.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
       <CheckBox id="normalized" fx:id="normalized" layoutX="379.0" layoutY="109.0" mnemonicParsing="false" onAction="#normalizedChange" text="Normalized" />
       <Button id="imageSelect" fx:id="imageSelect" layoutX="397.0" layoutY="308.0" mnemonicParsing="false" onAction="#imageSelectClicked" text="Select Image" />

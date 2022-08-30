@@ -38,7 +38,7 @@ public class HelloController implements Initializable{
         BufferedImage img = null;
 
         try {
-            img = ImageIO.read(new File("O92zpZavMmSbz7gjPvxbty-1b-VPJPMsnJ-thdPpohs.jpg"));
+            img = ImageIO.read(new File("index.jpg"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -58,17 +58,11 @@ public class HelloController implements Initializable{
 
         var values = getCurrentValues();
         imageModifier.getKernel().setValues(values);
-        Thread thread = new Thread(imageModifier);
-        thread.start();
-        try {
-            thread.join();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        imageModifier.modify();
         var img = imageModifier.getModifierImage();
 
 
-        modifiedImage.setImage(img);
+        modifiedImage.setImage(imageModifier.getModifierImage());
 
     }
 
